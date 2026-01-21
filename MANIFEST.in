@@ -1,0 +1,12 @@
+include README.md
+include LICENSE
+include CONTRIBUTORS.md
+include requirements.txt
+recursive-include expliRL *.py
+recursive-include tests *.py
+recursive-include examples *.py
+global-exclude *.pyc
+global-exclude __pycache__
+global-exclude .DS_Store
+global-exclude *.pkl
+global-exclude *.joblib

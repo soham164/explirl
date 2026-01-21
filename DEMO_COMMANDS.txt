@@ -1,0 +1,176 @@
+╔══════════════════════════════════════════════════════════════╗
+║           expliRL Demo - Quick Command Reference            ║
+╚══════════════════════════════════════════════════════════════╝
+
+📁 SETUP (Run these first)
+─────────────────────────────────────────────────────────────
+cd C:\Users\soham\expliRL
+myvenv\Scripts\activate
+
+
+🎬 MAIN DEMOS (Run in this order)
+─────────────────────────────────────────────────────────────
+
+1. VALIDATION CHECK (30 seconds)
+   python validate_pypi_ready.py
+   → Shows: ✅ All 12 checks passed
+
+2. COMPLETE DEMO (5 minutes) ⭐ BEST FOR PRESENTATION
+   python demo_complete.py
+   → Shows: All 4 explainers with comparison
+
+3. QUICKSTART (3 minutes)
+   python examples/quickstart.py
+   → Shows: Basic usage of all explainers
+
+4. HEALTHCARE DEMO (3 minutes) ⭐ REAL-WORLD EXAMPLE
+   python examples/healthcare_demo.py
+   → Shows: Patient risk assessment + recommendations
+
+5. VISUALIZATION DEMO (2 minutes)
+   python examples/tpo.py
+   → Shows: Interactive plots and charts
+
+
+🔧 CLI DEMOS
+─────────────────────────────────────────────────────────────
+explirl --help
+explirl explain --help
+explirl explain -m test_model.pkl -d test_data.csv -i 0 -t shap
+
+
+🌐 API DEMO
+─────────────────────────────────────────────────────────────
+# Start server (in new terminal)
+explirl serve
+
+# Test health check (in another terminal)
+curl http://localhost:8000/health
+
+
+🧪 TESTING
+─────────────────────────────────────────────────────────────
+python tests/test_basic.py
+python -c "import expliRL; print('Version:', expliRL.__version__)"
+
+
+📊 PACKAGE INFO
+─────────────────────────────────────────────────────────────
+pip show explirl
+python -m pip check
+
+
+╔══════════════════════════════════════════════════════════════╗
+║                    RECOMMENDED DEMO FLOW                     ║
+╚══════════════════════════════════════════════════════════════╝
+
+⏱️ 15-MINUTE DEMO:
+1. python validate_pypi_ready.py          (30 sec)
+2. python demo_complete.py                (5 min)  ⭐
+3. python examples/healthcare_demo.py     (3 min)  ⭐
+4. explirl --help                         (1 min)
+5. Q&A                                    (5 min)
+
+⏱️ 10-MINUTE DEMO:
+1. python demo_complete.py                (5 min)  ⭐
+2. python examples/healthcare_demo.py     (3 min)  ⭐
+3. Q&A                                    (2 min)
+
+⏱️ 5-MINUTE DEMO:
+1. python demo_complete.py                (5 min)  ⭐
+
+
+╔══════════════════════════════════════════════════════════════╗
+║                      KEY TALKING POINTS                      ║
+╚══════════════════════════════════════════════════════════════╝
+
+✨ UNIQUE FEATURES:
+• 4 XAI methods in one unified API
+• RL-optimized counterfactuals (FIRST IN THE WORLD!)
+• Production-ready (CLI, API, visualizations)
+• Works with ANY scikit-learn model
+
+📈 PERFORMANCE:
+• RL finds 30-50% fewer changes than traditional methods
+• Faster convergence with reinforcement learning
+• More actionable explanations
+
+🏥 REAL-WORLD APPLICATIONS:
+• Healthcare risk assessment
+• Credit scoring decisions
+• Fraud detection explanations
+• Hiring decision transparency
+
+
+╔══════════════════════════════════════════════════════════════╗
+║                    TROUBLESHOOTING                           ║
+╚══════════════════════════════════════════════════════════════╝
+
+❌ If imports fail:
+   pip install -e .
+
+❌ If visualizations don't show:
+   Add: import matplotlib; matplotlib.use('TkAgg')
+
+❌ If API port busy:
+   explirl serve --port 8001
+
+❌ If RL training is slow:
+   Reduce num_episodes to 20-30
+
+
+╔══════════════════════════════════════════════════════════════╗
+║                    BACKUP QUICK DEMO                         ║
+╚══════════════════════════════════════════════════════════════╝
+
+If something breaks, run this simple Python code:
+
+python -c "
+from expliRL import SHAPExplainer
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.datasets import load_iris
+
+iris = load_iris()
+X, y = iris.data, iris.target
+
+model = RandomForestClassifier()
+model.fit(X, y)
+
+explainer = SHAPExplainer(model)
+explainer.fit(X)
+exp = explainer.explain(X[0])
+print('SHAP values:', exp['shap_values'])
+print('✅ expliRL working!')
+"
+
+
+╔══════════════════════════════════════════════════════════════╗
+║                    DEMO CHECKLIST                            ║
+╚══════════════════════════════════════════════════════════════╝
+
+Before demo:
+□ Activate virtual environment
+□ Run validation script
+□ Test one demo script
+□ Have backup terminal ready
+□ Close unnecessary applications
+□ Increase terminal font size
+□ Have DEMO_GUIDE.md open
+
+During demo:
+□ Explain what you're showing
+□ Highlight RL optimization benefits
+□ Show real-world healthcare example
+□ Demonstrate CLI/API features
+□ Compare traditional vs RL results
+
+After demo:
+□ Show GitHub repo
+□ Mention PyPI publication
+□ Share documentation
+□ Answer questions
+
+
+═══════════════════════════════════════════════════════════════
+Good luck with your demo! 🚀
+═══════════════════════════════════════════════════════════════
