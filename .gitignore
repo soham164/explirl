@@ -302,6 +302,7 @@ config.ini
 *.key
 *.pem
 *.crt
+.pypirc
 
 # Cache directories
 .cache/
