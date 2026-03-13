@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Unified XAI framework with SHAP, LIME, and RL-driven Counterfactuals"
 readme = "Readme.md"
 requires-python = ">=3.7"
-license = {text = "MIT"}
+license = "MIT"
 authors = [
     {name = "expliRL Contributors", email = "contact@explirl.dev"}
 ]
@@ -27,7 +27,6 @@ classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "Intended Audience :: Science/Research",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.7",
