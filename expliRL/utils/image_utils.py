@@ -71,8 +71,8 @@ def preprocess_image(
     if normalize:
         image = (image - np.array(mean)) / np.array(std)
     
-    # Convert to tensor (C, H, W)
-    image_tensor = torch.from_numpy(image).permute(2, 0, 1)
+    # Convert to tensor (C, H, W) with float32 dtype
+    image_tensor = torch.from_numpy(image).permute(2, 0, 1).float()
     
     # Add batch dimension (1, C, H, W)
     return image_tensor.unsqueeze(0)

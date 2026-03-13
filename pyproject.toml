@@ -1,0 +1,99 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "expliRL"
+version = "0.1.0"
+description = "Unified XAI framework with SHAP, LIME, and RL-driven Counterfactuals"
+readme = "Readme.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+authors = [
+    {name = "expliRL Contributors", email = "contact@explirl.dev"}
+]
+keywords = [
+    "explainable-ai",
+    "xai",
+    "shap",
+    "lime",
+    "counterfactuals",
+    "reinforcement-learning",
+    "machine-learning",
+    "deep-learning",
+    "image-classification"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+dependencies = [
+    "numpy>=1.19.0,<2.0.0",
+    "pandas>=1.2.0,<2.0.0",
+    "scikit-learn>=0.24.0",
+    "shap>=0.39.0",
+    "lime>=0.2.0",
+    "matplotlib>=3.3.0",
+    "seaborn>=0.11.0",
+    "torch>=1.9.0",
+    "torchvision>=0.10.0",
+    "gymnasium>=0.26.0",
+    "fastapi>=0.68.0",
+    "uvicorn>=0.15.0",
+    "click>=8.0.0",
+    "plotly>=5.0.0",
+    "opencv-python>=4.5.0",
+    "Pillow>=8.0.0",
+    "scikit-image>=0.18.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0.0",
+    "pytest-cov>=2.10.0",
+    "black>=21.0",
+    "flake8>=3.9.0",
+    "isort>=5.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/soham164/explirl"
+Documentation = "https://github.com/soham164/explirl#readme"
+Repository = "https://github.com/soham164/explirl"
+"Bug Reports" = "https://github.com/soham164/explirl/issues"
+
+[project.scripts]
+explirl = "expliRL.cli.cli_tool:main"
+
+[tool.setuptools]
+packages = ["expliRL", "expliRL.core", "expliRL.rl_engine", "expliRL.utils", "expliRL.api", "expliRL.cli"]
+
+[tool.setuptools.package-data]
+expliRL = ["py.typed"]
+
+[tool.black]
+line-length = 100
+target-version = ['py37', 'py38', 'py39', 'py310']
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"

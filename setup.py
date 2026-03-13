@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-with open("README.md", "r", encoding="utf-8") as fh:
+with open("Readme.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
@@ -11,7 +11,7 @@ setup(
     description="Unified XAI framework with SHAP, LIME, and RL-driven Counterfactuals",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/explirl/expliRL",
+    url="https://github.com/soham164/explirl",
     packages=find_packages(),
     classifiers=[
         "Development Status :: 4 - Beta",
@@ -31,13 +31,13 @@ setup(
     python_requires=">=3.7",
     keywords="explainable-ai, xai, shap, lime, counterfactuals, reinforcement-learning, machine-learning",
     project_urls={
-        "Bug Reports": "https://github.com/explirl/expliRL/issues",
-        "Source": "https://github.com/explirl/expliRL",
-        "Documentation": "https://github.com/explirl/expliRL#readme",
+        "Bug Reports": "https://github.com/soham164/explirl/issues",
+        "Source": "https://github.com/soham164/explirl",
+        "Documentation": "https://github.com/soham164/explirl#readme",
     },
     install_requires=[
-        "numpy>=1.19.0",
-        "pandas>=1.2.0",
+        "numpy>=1.19.0,<2.0.0",
+        "pandas>=1.2.0,<2.0.0",
         "scikit-learn>=0.24.0",
         "shap>=0.39.0",
         "lime>=0.2.0",

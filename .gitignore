@@ -319,10 +319,13 @@ ehthumbs.db
 Thumbs.db
 
 # Project specific ignores
-# Keep these model files for demo purposes
-!test_model.pkl
-!telecom_models_churn.joblib
+# Ignore all markdown files except README and CONTRIBUTORS
+*.md
+!README.md
+!Readme.md
+!CONTRIBUTORS.md
 
-# Keep demo data
-!test_data.csv
-!explanation.json
+# Ignore test data and model files
+test_data.csv
+*.pkl
+*.joblib

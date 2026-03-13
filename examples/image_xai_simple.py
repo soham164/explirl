@@ -85,11 +85,14 @@ def main():
     image = Image.fromarray(image_array)
     print(f"   ✓ Image created (size: {image.size})")
     
-    # Get prediction
+    # Get prediction  # <-- NOTICE: This line needs to be indented
     print("\n3. Getting model prediction...")
     from expliRL.utils.image_utils import preprocess_image
     
     image_tensor = preprocess_image(image)
+    # Add this line to convert to float32
+    image_tensor = image_tensor.float()
+    
     with torch.no_grad():
         output = model(image_tensor)
         probabilities = torch.softmax(output, dim=1)
@@ -131,18 +134,18 @@ def main():
     print("="*60)
     print("""
 This demo showed:
-• Creating a simple CNN model
-• Generating synthetic test images
-• Using Grad-CAM to visualize model attention
-• Interpreting heatmaps to understand predictions
+- Creating a simple CNN model
+- Generating synthetic test images
+- Using Grad-CAM to visualize model attention
+- Interpreting heatmaps to understand predictions
 
 The heatmap shows which regions of the image the model
 focuses on when making its prediction.
 
 Try modifying:
-• The synthetic image patterns
-• The model architecture
-• The target layer for Grad-CAM
+- The synthetic image patterns
+- The model architecture
+- The target layer for Grad-CAM
     """)
 
 
